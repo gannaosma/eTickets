@@ -1,4 +1,4 @@
-﻿@model Actor
+﻿@model Producer
 
 @{
 	ViewData["Tittle"] = $"Delete {Model.FullName}";
@@ -32,7 +32,7 @@
 				<div class="d-flex justify-content-between mt-3">
 					<a asp-action="Index" class="btn btn-outline-secondary">Show All</a>
 					<form asp-action="Delete" method="post">
-						<input type="submit" value="Confirm" asp-action="Delete" class="btn btn-danger"/>
+						<input type="submit" value="Confirm" asp-action="Delete" class="btn btn-danger" />
 					</form>
 				</div>
 

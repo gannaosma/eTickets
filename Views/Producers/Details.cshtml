@@ -1,13 +1,13 @@
-﻿@model Actor
+﻿@model Producer
 
 @{
-	ViewData["Tittle"] = $"Delete {Model.FullName}";
+	ViewData["Tittle"] = $"Details for {Model.FullName}";
 }
 
 <div class="row text">
 	<div class="col-md-8 offset-2">
 		<p>
-			<h1>Delete @Model.FullName</h1>
+			<h1>Details for @Model.FullName</h1>
 		</p>
 		<div class="row">
 			<div class="col-md-8 offset-2">
@@ -31,9 +31,7 @@
 				</div>
 				<div class="d-flex justify-content-between mt-3">
 					<a asp-action="Index" class="btn btn-outline-secondary">Show All</a>
-					<form asp-action="Delete" method="post">
-						<input type="submit" value="Confirm" asp-action="Delete" class="btn btn-danger"/>
-					</form>
+					<a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-outline-success">Update</a>
 				</div>
 
 			</div>

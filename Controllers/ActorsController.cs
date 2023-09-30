@@ -88,7 +88,6 @@ namespace eTickets.Controllers
 			return RedirectToAction(nameof(Index));
 		}
 
-
 		public async Task<IActionResult> Delete(int id)
 		{
 			if (id <= 0)
