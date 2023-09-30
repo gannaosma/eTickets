@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace eTickets.Data.Services
 {
-    public class ActorsService: EntityRepository<Actor>, IActorsService
+    public class ActorsService: EntityBaseRepository<Actor>, IActorsService
     {
        
         public ActorsService(ApplicationDbContext context): base(context)

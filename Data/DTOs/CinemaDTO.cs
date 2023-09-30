@@ -1,11 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace eTickets.Models
+namespace eTickets.Data.DTOs
 {
-	public class Cinema
+	public class CinemaDTO
 	{
-        public int ID { get; set; }
-
 		[Display(Name = "Cinema Logo")]
 		[Required(ErrorMessage = "Cinema Logo is Required")]
 		public string Logo { get; set; }
@@ -16,8 +14,5 @@ namespace eTickets.Models
 		[Display(Name = "Cinema Description")]
 		[Required(ErrorMessage = "Cinema Description is Required")]
 		public string Description { get; set; }
-
-		//relationship
-		public List<Movie> Movies { get; set; }
 	}
 }

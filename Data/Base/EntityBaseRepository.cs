@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace eTickets.Data.Base
 {
-	public class EntityRepository<T> : IEntityBaseRepository<T> where T : class
+	public class EntityBaseRepository<T> : IEntityBaseRepository<T> where T : class
 	{
 		private readonly ApplicationDbContext _context;
-        public EntityRepository(ApplicationDbContext context)
+        public EntityBaseRepository(ApplicationDbContext context)
         {
 			_context = context;
         }
