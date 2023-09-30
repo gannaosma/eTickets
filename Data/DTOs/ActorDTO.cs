@@ -1,15 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace eTickets.Models
+namespace eTickets.Data.DTOs
 {
-	public class Actor
+	public class ActorDTO
 	{
-        [Key]
-        public int ID { get; set; }
-
-        [Display(Name = "Profile Picture")]
-        [Required(ErrorMessage = "Profile Picture is required")]
-        public string ProfilePictureURL { get; set; }
+		[Display(Name = "Profile Picture")]
+		[Required(ErrorMessage = "Profile Picture is required")]
+		public string ProfilePictureURL { get; set; }
 
 		[Display(Name = "Name")]
 		[Required(ErrorMessage = "Name is required")]
@@ -19,7 +16,5 @@ namespace eTickets.Models
 		[Display(Name = "Bio")]
 		[Required(ErrorMessage = "Bio is required")]
 		public string Bio { get; set; }
-        //relationship
-        public List<Actor_Movie> Actors_Movies { get; set; }
-    }
+	}
 }
