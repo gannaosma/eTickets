@@ -1,5 +1,6 @@
 ﻿using eTickets.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Linq.Expressions;
 
 namespace eTickets.Data.Base
 {
@@ -15,6 +16,13 @@ namespace eTickets.Data.Base
 		{
 			return await _context.Set<T>().ToListAsync();
 		}
+		public async Task<IEnumerable<T>> GetAllAsync(params Expression<Func<T, object>>[] includeproperties)
+		{
+			IQueryable<T> query = _context.Set<T>();
+			query = includeproperties.Aggregate(query, (current, includeproperties) => current.Include(includeproperties));
+			return await query.ToListAsync();
+		}
+
 
 		public async Task<T> GetByIdAsync(int id)
 		{
