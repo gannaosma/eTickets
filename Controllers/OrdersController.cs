@@ -62,7 +62,7 @@ namespace eTickets.Controllers
             return RedirectToAction(nameof(ShoppingCart));
         }
 
-		public async Task<IActionResult> CompleteOrder(int id)
+		public async Task<IActionResult> CompleteOrder()
 		{
 			var items =  _shoppingCart.GetShoppingCartItems();
 
