@@ -15,7 +15,10 @@
                             <div class="card-text">
                                 <h5 class="card-title d-flex justify-content-between">
                                     @item.Name
-                                    <a asp-action="Edit" asp-route-id="@item.ID" class="text-white float-right"><i class="bi bi-pencil-square"></i></a>
+                                    @if(User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                                    {
+                                        <a asp-action="Edit" asp-route-id="@item.ID" class="text-white float-right"><i class="bi bi-pencil-square"></i></a>
+                                    }
                                 </h5>
                             </div>
                         </div>

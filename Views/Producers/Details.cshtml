@@ -31,7 +31,10 @@
 				</div>
 				<div class="d-flex justify-content-between mt-3">
 					<a asp-action="Index" class="btn btn-outline-secondary">Show All</a>
-					<a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-outline-success">Update</a>
+					@if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+					{
+						<a asp-action="Edit" asp-route-id="@Model.ID" class="btn btn-outline-success">Update</a>
+					}
 				</div>
 
 			</div>
